@@ -1,0 +1,36 @@
+<table class="form">
+  <%= form_tag(controller: "dengonban", action:"index") do %>
+    <tr>
+      <td>名前:</td>
+      <td><%= text_field_tag("name") %></td>
+    </tr>
+    <tr>
+      <td>メール</td>
+      <td><%= text_field_tag("mail") %></td>
+    </tr>
+    <tr>
+      <td>メッセージ</td>
+      <td><%= text_area_tag("msg", '', size: "50x3") %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= submit_tag("click") %></td>
+    </tr>
+  <% end %>
+
+  <table class="dengon">
+    <tr>
+      <th style="width:50%">メッセージ</th>
+      <th>名前</th>
+      <th>メール</th>
+      <th>投稿日</th>
+    </tr>
+    <% @dengon_data.each do |key, obj| %>
+    <tr>
+      <td class="msg"><%= obj['msg'] %></td>
+      <td class="name"><%= obj['name'] %></td>
+      <td class="mail"><%= obj['mail'] %></td>
+      <td class="time"><%= Time.at(key.to_i) %></td>
+    </tr>
+    <% end %>
+  </table>

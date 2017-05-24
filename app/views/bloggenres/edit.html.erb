@@ -1,0 +1,19 @@
+<h1>Bloggenres#edit</h1>
+<p>※「<%= @bloggenre.name %>」ジャンルの編集</p>
+<% if @bloggenre.errors.any? %>
+<ul>
+  <% @bloggenre.errors.full_messages.each do |err| %>
+  <li><%= err %></li>
+  <% end %>
+</ul>
+<% end %>
+<table>
+  <%= form_for(@bloggenre, url:{controller:'bloggenre', action:'edit'}) do |form| %>
+  <tr><th>Title</th>
+    <td><%= form.text_field :name %></td></tr>
+    <tr><th>Subtitle</th>
+      <td><%= form.text_field :memo %></td></tr>
+      <tr><th></th>
+        <td><%= form.submit "送信" %></td></tr>
+        <% end %>
+      </table>
