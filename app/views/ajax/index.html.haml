@@ -1,0 +1,11 @@
+%h1 Ajax#index
+%table
+  = form_tag({controller:'ajax', action:'data'}, remote:true) do
+    %tr
+      %th name
+      %td= text_field_tag :name
+    %tr
+      %th
+      %td= submit_tag "送信"
+%hr/
+%table#result

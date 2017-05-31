@@ -1,0 +1,19 @@
+%h1 Blogposts#index
+%p ※投稿記事の一覧
+%table
+  %tr
+    %th Id
+    %th title
+    %th read
+    %th genre
+    %th{:colspan => "2"}
+  - @data.each do |obj|
+    %tr
+      %td= obj.id
+      %td= obj.title
+      %td= obj.read
+      %td= obj.bloggnre.name
+      %td
+        %a{:href => "/blogposts/#{obj.id}"} Edit
+      %td
+        %a{:href => "/blogposts/delete/#{obj.id}"} Delete

@@ -1,0 +1,25 @@
+%h1 Messages#index
+%p= @msg
+%table
+  %tr
+    %th Id
+    %th title
+    %th person
+    %th{:colspan => "2"}
+  - @data.each do |obj|
+    %tr
+      %td= obj.id
+      %td
+        %a{:href => "/messages/#{obj.id}"}= obj.title
+      %td= obj.person.name
+      %td
+        %a{:href => "/message/edit/#{obj.id}"} Edit
+      %td
+        %a{:href => "javascript:delData( obj.id );"} Delete
+:javascript
+  function delData(num){
+    if(confirm('このデータを削除しますか')){
+      document.location="/messages/delete/" + num;
+    }
+    return false;
+  }

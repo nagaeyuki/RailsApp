@@ -1,0 +1,20 @@
+%h1 Cards#index
+%p 現在登録されているデータの一覧です
+%table{:width => "100%"}
+  %tr
+    %th ID
+    %th 題名
+    %th 著者
+    %th{:colspan => "2"}
+  - @cards.each do |obj|
+    %tr
+      %td{:width => "35px"}= obj.id
+      %td{:width => "50%"}
+        %a{:href => "/cards/#{obj.id}"}= obj.title
+      %td= obj.author
+      %td{:width => "40px"}
+        %a{:href => "/cards/edit/#{obj.id}"} 編集
+      %td{:width => "40px"}
+        %a{:href => "javascript:window.delData(#{(obj.id.to_s+",'".to_s+obj.title.to_s).html_safe}');"} 削除
+%p.link
+  %a{:href => "/cards/add"} 新しいデータを入力 &gt;&gt;

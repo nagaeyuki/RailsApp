@@ -1,0 +1,18 @@
+%h1 Bloggenres#add
+%p ※ジャンル・データの一覧
+- if @bloggenre.errors.any?
+  %ul
+    - @bloggenre.errors.full_messages.each do |err|
+      %li= err
+%table
+  = form_for(@bloggenre, url:{controller:'bloggenres', action:'add'}) do |form|
+    %tr
+      %th name
+      %td= form.text_field :name
+    %tr
+      %th memo
+      %td= form.text_field :memo
+    %tr
+      %th
+      %td
+        = form.submit "送信"

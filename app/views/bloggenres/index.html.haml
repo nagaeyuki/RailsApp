@@ -1,0 +1,17 @@
+%h1 Bloggenres#index
+%p ※ジャンル・データの一覧
+%table
+  %tr
+    %th Id
+    %th name
+    %th memo
+    %th
+  - @data.each do |obj|
+    %tr
+      %td= obj.id
+      %td= obj.name
+      %td= obj.memo
+      %td
+        %a{:href => "/bloggenres/#{obj.id}"} Edit
+%p
+  %a{:href => "/bloggenres/add"} 新規作成&gt;&gt;

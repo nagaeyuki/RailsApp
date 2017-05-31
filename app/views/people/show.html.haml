@@ -1,0 +1,21 @@
+%h1 People#index
+%p= @msg
+%table
+  %tr
+    %th Id
+    %td= @data.id
+  %tr
+    %th Name
+    %td= @data.name
+  %tr
+    %th Age&gt;
+    %td= @data.age
+  %tr
+    %th Mail
+    %td= @data.mail
+  %tr
+    %th Message
+    %td
+      - if @data.message != nil then
+        - @data.message.each do |obj|
+          = '「' + obj.title + '」'

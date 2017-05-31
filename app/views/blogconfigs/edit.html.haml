@@ -1,0 +1,20 @@
+%h1 Blogconfigs#edit
+%p ※ブログ設定の編集
+- if @blogconfig.errors.any?
+  %ul
+    - @blogconfig.errors.full_messages.each do |err|
+      %li= err
+%table
+  = form_for(@blogconfig, url:{controller:'blogconfigs', action:'edit'}) do |form|
+    %tr
+      %th Title
+      %td= form.text_field :title
+    %tr
+      %th SubTitle
+      %td= form.text_field :subtitle
+    %tr
+      %th Style name
+      %td= form.text_field :stylename
+    %tr
+      %th
+      %td= form.submit "送信"
