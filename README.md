@@ -1,4 +1,4 @@
-#導入
+# 導入
 
 bower-railsを初期化する  
 $ rails g bower_rails:initialize  
