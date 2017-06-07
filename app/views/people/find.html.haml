@@ -1,0 +1,23 @@
+%h1 People#Find
+%p= @msg
+%table
+  = form_tag(controller: "people", action: "find") do
+    %tr
+      %th FIND
+      %td= text_field_tag("find")
+    %tr
+      %th
+      %td= submit_tag("Click")
+%hr/
+%table
+  %tr
+    %th Id
+    %th Name
+    %th Age
+    %th Mail
+  - @people.each do |obj|
+    %tr
+      %td= obj.id
+      %td= obj.name
+      %td= obj.age
+      %td= obj.mail

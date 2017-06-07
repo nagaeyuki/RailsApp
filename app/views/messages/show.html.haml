@@ -1,0 +1,18 @@
+%h1 Messages#show
+%p= @msg
+%table
+  %tr
+    %th Id
+    %td= @message.id
+  %tr
+    %th Preson
+    %td= @message.person_id
+  %tr
+    %th title
+    %td= @message.title
+  %tr
+    %th message
+    %td= @message.message
+  %tr
+    %th created
+    %td= @message.created_at

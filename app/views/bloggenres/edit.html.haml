@@ -1,0 +1,18 @@
+%h1 Bloggenres#edit
+%p
+  ※「#{@bloggenre.name}」ジャンルの編集
+- if @bloggenre.errors.any?
+  %ul
+    - @bloggenre.errors.full_messages.each do |err|
+      %li= err
+%table
+  = form_for(@bloggenre, url:{controller:'bloggenre', action:'edit'}) do |form|
+    %tr
+      %th Title
+      %td= form.text_field :name
+    %tr
+      %th Subtitle
+      %td= form.text_field :memo
+    %tr
+      %th
+      %td= form.submit "送信"

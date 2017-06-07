@@ -1,0 +1,14 @@
+%h1 Blogconfigs#index
+%p ※ブログの設定内容
+%table
+  %tr
+    %th Title
+    %td= @blogconfig.title
+  %tr
+    %th Subtitle
+    %td= @blogconfig.subtitle
+  %tr
+    %th Style Name
+    %td= @blogconfig.stylename
+%p
+  %a{:href => "/blogconfigs/edit"} 編集画面&gt;&gt;

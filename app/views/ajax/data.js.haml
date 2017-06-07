@@ -1,0 +1,22 @@
+var data=#{@data}
+var result='';
+data.forEach(function(e){
+result+='
+%tr>
+  %td
+    %table
+      ';
+      result+='
+      %tr>
+        %th NAME
+        %td ' + e.name + '(' + e.age + ')' +'
+      ';
+      result+='
+      %tr>
+        %th MAIL
+        %td ' + e.mail + '
+      ';
+      result+='
+';
+});
+$('#result').html(result);

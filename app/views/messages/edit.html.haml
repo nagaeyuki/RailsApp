@@ -1,0 +1,20 @@
+%h1 Messages#edit
+%p= @msg
+- if @message.errors.any?
+  %ul
+    - @message.errors.full_messages.each do |err|
+      %li= err
+%table
+  = form_for(@message, url:{controller:'messages', action:'update', id:@message.id}) do |form|
+    %tr
+      %th Person ID
+      %td= form.text_field :person_id
+    %tr
+      %th Title
+      %td= form.text_field :title
+    %tr
+      %th Message
+      %td= form.text_area :message, {cols:30, rows:3}
+    %tr
+      %th
+      %td= form.submit "送信"

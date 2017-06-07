@@ -1,9 +1,0 @@
-var data=<%=@data %>
-var result='';
-data.forEach(function(e){
-  result+='<tr><td><table>';
-  result+='<tr><th>NAME</th><td>' + e.name + '(' + e.age + ')' +'</td></tr>';
-  result+='<tr><th>MAIL</th><td>' + e.mail + '</td></tr>';
-  result+='</table></td></tr>';
-});
-$('#result').html(result);

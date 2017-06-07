@@ -1,0 +1,24 @@
+%h1 Cards#add
+%p 登録する読書データを入力してください
+%table
+  = form_for(@card, url:{controller:'cards', action:'add'}) do |form|
+    %tr
+      %th タイトル
+      %td= form.text_field :title, {size:40}
+    %tr
+      %th 著者
+      %td= form.text_field :author, {size:40}
+    %tr
+      %th 価格
+      %td= form.number_field :price, {size:10}
+    %tr
+      %th 出版社
+      %td= form.text_field :publisher, {size:40}
+    %tr
+      %th コメント
+      %td= form.text_area :memo, {cols:40, rows:10}
+    %tr
+      %th
+      %td= form.submit "保存"
+%p.link
+  %a{:href => "/cards"} &lt;&lt; トップページに戻る

@@ -1,24 +1,9 @@
-# README
+# 導入
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+bower-railsを初期化する  
+$ rails g bower_rails:initialize  
+  
+⇛Bowerfile が作成されるので以下を記述し、AdminLTE をインストールする。  
+asset 'admin-lte'  
+  
+$ rake bower:install

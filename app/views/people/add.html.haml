@@ -1,0 +1,20 @@
+%h1 People#Add
+%p= @msg
+- if @person.errors.any?
+  %ul
+    - @person.errors.full_messages.each do |err|
+      %li= err
+%table
+  = form_for(@person, url:{controller:'people', action:'create'}) do |form|
+    %tr
+      %th Name
+      %td= form.text_field :name
+    %tr
+      %th Age
+      %td= form.text_field :age
+    %tr
+      %th Mail
+      %td= form.text_field :mail
+    %tr
+      %th
+      %td= form.submit "送信"
