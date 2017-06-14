@@ -8,7 +8,7 @@
     %th Name
     %td= @data.name
   %tr
-    %th Age&gt;
+    %th Age
     %td= @data.age
   %tr
     %th Mail
@@ -19,3 +19,13 @@
       - if @data.message != nil then
         - @data.message.each do |obj|
           = '「' + obj.title + '」'
+  %tr
+    %th スキル
+    -# %td= @data.skill_list
+
+    %td= render 'people/tag_list', tag_list: @data.skill_list
+    %td= render 'people/related_people', people: @data.find_related_skills
+  %tr
+    %th 興味
+    -# %td= @data.interest_list
+    %td= render 'people/tag_list', tag_list: @data.interest_list

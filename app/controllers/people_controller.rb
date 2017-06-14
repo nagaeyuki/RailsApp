@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
   layout 'people'
   def index
-    @msg='Person data.'
+    @msg="Person data"
     @data=Person.all
   end
 
@@ -55,6 +55,11 @@ end
 
   private
   def person_params
-    params.require(:person).permit(:name, :age, :mail)
+    params.require(:person).permit(:name, :age, :mail, :skill_list, :interest_list)
   end
+
+  def tag_cloud
+  # order('count DESC')でカウントの多い順にタグを並べています
+  @tags = User.tag_counts_on(:tags).order('count DESC')
+end
 end
