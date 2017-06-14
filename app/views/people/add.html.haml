@@ -16,5 +16,11 @@
       %th Mail
       %td= form.text_field :mail
     %tr
-      %th
+      %th= form.label :skill_list, "スキル・特技（カンマ区切り）"
+      %td= text_field_tag 'person[skill_list]', @person.skill_list.join(',')
+
+    %tr
+      %th= form.label :interest_list, "興味・関心（カンマ区切り）"
+      %td= text_field_tag 'person[interest_list]', @person.interest_list.join(',')
+    %th
       %td= form.submit "送信"
