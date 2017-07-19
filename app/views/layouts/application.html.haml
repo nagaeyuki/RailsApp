@@ -1,10 +1,43 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title RailsApp
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %title Rails
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    = yield
+  %body.skin-blue
+    .warapper
+      %header.main-header
+        %a.logo{:href => ""}HEADER
+        %nav.navbar.navbar-static-top{:role=>"navigation"}
+          %ul.nav.navbar-nav
+            %li
+              %a.sidebar-toggle{:href=>"", :"data-toggle"=>"offcanvas", :role=>"button"} サイドバーをたたむ
+      %aside.main-sidebar
+        %section.sidebar
+          %ul.sidebar-menu
+            %li.header SIDEBAR
+            %li.treeview.active
+              %a{:href => ""}
+                %i.fa.fa-link
+                %span Link
+                %span.pull-right-container
+                  %i.fa.fa-angle-left.pull-right
+              %ul.treeview-menu
+                %li
+                  %a{:href => "http://localhost:3000/messages"} Messages
+                %li
+                  %a{:href => "http://localhost:3000/people"} People
+            %li
+              %a{:href => "dengonban"}
+                %i.fa.fa-link
+                %span 伝言板
+      .content-wrapper
+        %section.content-header
+          %section.content
+            = yield
+      %footer.main-footer
+        .pull-right.hidden-xs Version1.0
+        %strong opyright &copy; 2017
+        , All rights reserved.

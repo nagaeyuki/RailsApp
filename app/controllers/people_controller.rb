@@ -1,8 +1,8 @@
 class PeopleController < ApplicationController
-  layout 'people'
   def index
     @msg="Person data"
     @data=Person.all
+
   end
 
   def show
@@ -28,6 +28,10 @@ class PeopleController < ApplicationController
   def edit
 @msg="edit data.[id = " + params[:id] + "]"
 @person=Person.find(params[:id])
+if params['id'] != nil then
+  params['id'] =nil
+end
+
   end
 
   def update

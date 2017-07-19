@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-layout 'messages'
+layout 'application'
   def index
     @msg='Message data'
     @data=Message.all
@@ -38,7 +38,7 @@ layout 'messages'
 def delete
   obj = Message.find(params[:id])
   obj.destroy
-  redirect_to '/message'
+  redirect_to '/messages'
 end
 
 private

@@ -14,6 +14,26 @@
         %a{:href => "/people/edit/#{obj.id}"} Edit
       %td
         %a{:href => "javascript:delData(#{obj.id});"} Delete
+
+.container
+  .row
+    .col-sm-6
+      .form-group
+        .datetimepicker.input-group.date
+          %input.form-control{:type => "text"}/
+          %span.input-group-addon
+            %span.glyphicon.glyphicon-calendar
+
+
+-# .controls
+-#   =text_field :created_at, data: { :date_format => 'YYYY/MM/DD hh:mm' }, :class => 'form-control datetimepicker', placeholder: 'YYYY/MM/DD hh:mm:ss'
+
+-# = text_field :act_on, class: 'datepicker'
+-# = text_field_tag :start, Time.now.strftime("%Y-%m-%d"), :class => 'datepicker'
+-# .input-group.date.datetimepicker
+-#   = text_field :deadline, class: 'form-control'
+-#   %span.input-group-addon
+-#     %span.fa.fa-calendar
 :javascript
   function delData(num){
     if(confirm('このデータを削除しますか')){
